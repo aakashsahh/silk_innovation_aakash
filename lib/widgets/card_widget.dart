@@ -5,7 +5,7 @@ class CardWidget extends StatelessWidget {
   final CardModel card;
   final VoidCallback onTap;
 
-  CardWidget({required this.card, required this.onTap});
+  const CardWidget({super.key, required this.card, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -14,11 +14,11 @@ class CardWidget extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Card(
-        color: card.isFlipped ? Colors.white : Colors.blue,
+        color: card.isFlipped ? Colors.white : Colors.teal,
         child: Center(
           child: Text(
-            card.isFlipped ? '${card.number}' : '',
-            style: TextStyle(fontSize: 24, color: Colors.black),
+            card.isFlipped ? card.number : '',
+            style: const TextStyle(fontSize: 24, color: Colors.black),
           ),
         ),
       ),

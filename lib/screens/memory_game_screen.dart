@@ -7,6 +7,8 @@ import '../widgets/game_grid.dart';
 import '../widgets/game_over_dialog.dart';
 
 class MemoryGameScreen extends StatelessWidget {
+  const MemoryGameScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +16,7 @@ class MemoryGameScreen extends StatelessWidget {
         title: const Text('Memory Game'),
         actions: [
           IconButton(
-            icon: Icon(Icons.refresh),
+            icon: const Icon(Icons.refresh),
             onPressed: () {
               context.read<MemoryGameBloc>().add(ResetGame());
             },

@@ -11,10 +11,25 @@ class MemoryGameBloc extends Bloc<MemoryGameEvent, MemoryGameState> {
   }
 
   List<CardModel> _generateShuffledDeck() {
-    List<int> cardNumbers = List.generate(8, (index) => index + 1); // 8 pairs
+    List<String> cardNumbers = [
+      'A',
+      'K',
+      'Q',
+      'J',
+      '10',
+      '1',
+      '2',
+      '3',
+      '4',
+      '5',
+      '6',
+      '7',
+      '8',
+      '9',
+    ]; // Add A, K, Q, J, 10 to the list
     List<CardModel> deck = [];
 
-    for (int number in cardNumbers) {
+    for (String number in cardNumbers) {
       deck.add(CardModel(id: deck.length, number: number));
       deck.add(CardModel(id: deck.length, number: number));
     }
@@ -51,7 +66,8 @@ class MemoryGameBloc extends Bloc<MemoryGameEvent, MemoryGameState> {
             'Flipped Cards: ${flippedCards.map((c) => c.number).toList()}'); // Debug statement
 
         if (flippedCards.length == 2) {
-          await Future.delayed(Duration(milliseconds: 500)); // Wait for 500ms
+          await Future.delayed(
+              const Duration(milliseconds: 500)); // Wait for 500ms
 
           if (flippedCards[0].number == flippedCards[1].number) {
             // Cards match

@@ -1,6 +1,6 @@
 class CardModel {
   final int id;
-  final int number;
+  final String number;
   bool isFlipped;
   bool isMatched;
 
@@ -15,7 +15,7 @@ class CardModel {
 
   CardModel copyWith({
     int? id,
-    int? number,
+    String? number,
     bool? isFlipped,
     bool? isMatched,
   }) {

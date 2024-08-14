@@ -17,23 +17,27 @@ class GameGrid extends StatefulWidget {
 class _GameGridState extends State<GameGrid> {
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 4,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: 4,
+        ),
+        padding: EdgeInsets.all(4),
+        itemCount: widget.cards.length,
+        itemBuilder: (context, index) {
+          final card = widget.cards[index];
+          return CardWidget(
+            card: card,
+            onTap: () {
+              if (!card.isFlipped && !card.isMatched) {
+                context.read<MemoryGameBloc>().add(FlipCard(index));
+                setState(() {}); // Add this line to rebuild the widget tree
+              }
+            },
+          );
+        },
       ),
-      itemCount: widget.cards.length,
-      itemBuilder: (context, index) {
-        final card = widget.cards[index];
-        return CardWidget(
-          card: card,
-          onTap: () {
-            if (!card.isFlipped && !card.isMatched) {
-              context.read<MemoryGameBloc>().add(FlipCard(index));
-              setState(() {}); // Add this line to rebuild the widget tree
-            }
-          },
-        );
-      },
     );
   }
 }

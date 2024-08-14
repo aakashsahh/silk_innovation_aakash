@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:silk_innovation_aakash/blocs/memory_game_bloc.dart';
 import 'package:silk_innovation_aakash/screens/memory_game_screen.dart';
 
 void main() {
@@ -13,7 +15,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Memory Game',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: MemoryGameScreen(),
+      home: BlocProvider(
+        create: (_) => MemoryGameBloc(),
+        child: MemoryGameScreen(),
+      ),
       debugShowCheckedModeBanner: false,
     );
   }

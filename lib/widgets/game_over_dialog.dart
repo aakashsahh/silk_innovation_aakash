@@ -8,7 +8,7 @@ class GameOverDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AlertDialog(
-      title: Text('Game Over'),
+      title: const Text('Game Over'),
       content: Text('Congratulations! You completed the game in $moves moves.'),
       actions: [
         TextButton(

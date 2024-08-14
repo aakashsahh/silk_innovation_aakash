@@ -19,6 +19,12 @@ class MemoryGameScreen extends StatelessWidget {
             icon: const Icon(Icons.refresh),
             onPressed: () {
               context.read<MemoryGameBloc>().add(ResetGame());
+
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text('Your Game have been reset!'),
+                ),
+              );
             },
           ),
         ],

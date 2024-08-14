@@ -9,8 +9,6 @@ class CardWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(
-        'Card Widget Build: ${card.number}, Flipped: ${card.isFlipped}, Matched: ${card.isMatched}'); // Debug statement
     return GestureDetector(
       onTap: onTap,
       child: Card(

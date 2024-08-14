@@ -26,7 +26,7 @@ class MemoryGameBloc extends Bloc<MemoryGameEvent, MemoryGameState> {
       '7',
       '8',
       '9',
-    ]; // Add A, K, Q, J, 10 to the list
+    ]; // Added A, K, Q, J, 10 to the list
     List<CardModel> deck = [];
 
     for (String number in cardNumbers) {
@@ -106,6 +106,5 @@ class MemoryGameBloc extends Bloc<MemoryGameEvent, MemoryGameState> {
   void _onResetGame(ResetGame event, Emitter<MemoryGameState> emit) {
     List<CardModel> newDeck = _generateShuffledDeck();
     emit(MemoryGameInProgress(cards: newDeck, moves: 0));
-    print('Game reset with new deck'); // Debug statement
   }
 }

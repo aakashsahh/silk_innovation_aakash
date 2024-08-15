@@ -52,6 +52,10 @@ A Flutter-based memory game where users flip cards to match pairs. The game test
 
 [@aakashsahh ](https://github.com/aakashsahh)
 
+## Contributing
+
+Contributions are welcome! If you find any bugs or want to suggest improvements, feel free to open an issue or submit a pull request.
+
 
 
 ## Screenshots

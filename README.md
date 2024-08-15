@@ -65,3 +65,7 @@ Contributions are welcome! If you find any bugs or want to suggest improvements,
 ## License
 
 This project is licensed under the MIT License - see the [MIT](https://choosealicense.com/licenses/mit/) file for details.
+
+## 🔗 Links
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aakash-kumar-sah/)
+
